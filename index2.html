@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processamento único</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    <h2 class="title">Titulo da página</h2>
+    <button id="animar">Vai!</button>  <br />
+    <img src="/img/iron-man.webp" alt="iro man gif" width="300">
+    <button id="btn-js">Click me</button>
+    <h2 id="hello">
+
+    </h2>
+    
+    <script>
+        const $button = document.getElementById('btn-js')
+        const $hello = document.getElementById('hello')
+        const $vai = document.getElementById('animar')
+
+        $button.addEventListener("click", e => {
+            e.preventDefault()
+
+            $hello.innerHTML += 'Fui clicado'
+        })
+
+        $vai.addEventListener("click", e => {
+            e.preventDefault()
+
+            document.querySelector('.title').classList.add('animate')
+        })
+
+// executa a cada 30 frames
+        // requestAnimationFrame(function () {
+        //     let content = ''
+        //     for (let i = 0; i < 10000; i++) {
+        //         //document.getElementById('hello').innerHTML += 'fui clicado' // Não usar dessa forma
+        //         content += 'Fui clicado'
+        //     }
+
+        //     $hello.innerHTML = content
+        // })
+
+
+// executa apenas com a página ociosa
+        // requestIdleCallback(function () {
+        //     let content = ''
+        //     for (let i = 0; i < 10000; i++) {
+        //         //document.getElementById('hello').innerHTML += 'fui clicado' // Não usar dessa forma
+        //         content += 'Fui clicado'
+        //     }
+
+        //     $hello.innerHTML = content
+        // })
+
+
+    </script>
+</body>
+
+</html>
